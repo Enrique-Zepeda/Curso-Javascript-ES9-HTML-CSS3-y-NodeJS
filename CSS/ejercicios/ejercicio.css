@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(211, 208, 208);
+}
+.Caja {
+    margin: 5px;
+    width: 40%;
+    padding-top: 1px;
+    padding-left: 5px;
+    height: 160px;
+    border: 1px outset rgb(131, 129, 129);
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+}
+#acept{
+    border: 0px;
+    padding: 4px;
+    color: white;
+    background-color: rgb(15, 111, 221)
+}
+#cancel{
+    border: 0px;
+    padding: 4px;
+    color: white;
+    background-color: rgb(184, 184, 184)
+}

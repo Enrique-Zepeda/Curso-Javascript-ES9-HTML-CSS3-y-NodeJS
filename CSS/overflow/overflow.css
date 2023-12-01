@@ -1,0 +1,9 @@
+body{
+    background-color: #eee;
+}
+#over{
+    width: 100px;
+    height: 100px;
+    overflow: scroll; /*hidden(Contenido que no se alcanze a mostrar va quedar totalmente oculto)
+    visible(es el deafult) scroll(nos va agregar un scroll) con overflow tambien podemos forzar el eje(x,y)*/
+}

@@ -1,0 +1,14 @@
+body{
+    background-color: #eee;
+}
+img{
+    float: right;
+    width: 200px;
+    opacity: 0.5;
+}
+img:hover{
+    opacity: 1;
+}
+div p{
+    color: blueviolet;
+}

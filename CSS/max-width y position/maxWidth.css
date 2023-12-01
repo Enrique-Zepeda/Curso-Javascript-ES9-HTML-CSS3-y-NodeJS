@@ -1,0 +1,12 @@
+body{
+    background-color: #eee;
+}
+p{
+    max-width: 200px;
+    background-color: #f00;
+    margin: auto;
+    position: fixed;
+    left: 15px;
+    top: 0px;
+    bottom: 0px;
+}
