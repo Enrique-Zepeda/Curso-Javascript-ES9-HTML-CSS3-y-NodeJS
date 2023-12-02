@@ -1,0 +1,17 @@
+body{
+    background-color: #eee;
+}
+
+.fondo{
+    background-color: red;
+    background-image: url(https://placekitten.com/200/287);
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: scroll; /* fixed sirve para que la imagen nos siga cuando hacemos scroll */
+    background-size: cover;
+}
+/* todo en una linea */
+/* .fondo{
+    background-color: green url(https://placekitten.com/200/287) no-repeat left top fixed;
+} */
