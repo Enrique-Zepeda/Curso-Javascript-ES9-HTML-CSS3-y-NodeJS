@@ -1,0 +1,13 @@
+body{
+    background-color: #eee;
+}
+
+/* eL grid son unas especies de celdas que nos permite distribuir el contenio(puee ser en columnas o filas)*/
+/* inline-grid solo va a usar el espacio que tiene efinido sus elementos */
+.grid{
+    display: grid;
+}
+
+.element{
+    background-color: RED;
+}
