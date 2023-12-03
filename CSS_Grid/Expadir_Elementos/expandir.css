@@ -1,0 +1,29 @@
+body{
+    background-color: #eee;
+}
+
+/* eL grid son unas especies de celdas que nos permite distribuir el contenio(puee ser en columnas o filas)*/
+/* inline-grid solo va a usar el espacio que tiene efinido sus elementos */
+.grid{
+    display: grid;
+    grid-template-rows: repeat(2,50px);
+    grid-template-columns: 30px repeat(3, 1fr) 15px;
+    grid-gap: 20px 10px;
+}
+
+.element{
+    background-color: RED;
+}
+
+/* Grid column starty Grid column end  */
+/* Grid row starty Grid row end  */
+/* estas no pueden ser aplicaas a al grid solo a un elemento en especial */
+
+.header{
+    /* grid-column-start:1;
+    grid-column-end: 6;
+    grid-row-start:1;
+    grid-row-end: 3; */
+    grid-column: 1/6;
+    grid-row: 1 / 3;
+}
