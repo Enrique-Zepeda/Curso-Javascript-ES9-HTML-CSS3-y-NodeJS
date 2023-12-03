@@ -1,0 +1,23 @@
+body{
+    background-color: #eee;
+}
+
+/* Con la notacion de repeat se podra darle nombre mas facil si son muchos elementos */
+/* repeat(las veces que repite, luego del nombre y despues los px)*/
+.grid{
+    display: grid;
+    grid-template-rows: repeat(2,[row-inicio] 50px [row-fin]);
+    grid-template-columns: repeat(3,[col-inicio] 1fr [col-fin]);
+    grid-gap: 15px;
+}
+
+/* se usan los corchetes para poder definir el nombre */
+
+.element{
+    background-color: RED;
+}
+
+.header{
+    grid-column: col-inicio / col-fin 3;
+    grid-row: row-inicio / row-fin 3;
+}
