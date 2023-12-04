@@ -1,0 +1,29 @@
+
+.flex{
+    display: flex;
+    flex-flow: row wrap;
+    height: 200px;
+    
+    
+}
+/* Las propiedades de float, clear y vertical-aling no tienen ningun efecto dentro de los elemntos de flex */
+/* todos los hijos de un contenedor de flex van a tener la propiedad de orde y su valor inicial siempre va a ser de 0*/
+
+.primero{
+    /* flex: 1 120px; es la forma corta de poner flex grow y flex basis*/
+   flex-grow: 1;
+   flex-basis: 120px;
+   background-color: brown;
+}
+
+.tercero{
+   flex-grow: 2;
+   align-self: baseline;
+   /* align-self: auto,flex-start, flex-end, center; ,baseline(solo usa el espacio disponible del texto),stretch */
+   background-color: aqua;
+}
+
+.segundo{
+    flex-grow: 1;
+    background-color: rebeccapurple;
+ }
