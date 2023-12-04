@@ -1,0 +1,14 @@
+body{
+    background-color: #eee;
+    width: 200px;
+}
+
+.flex{
+    display: flex;
+    flex-flow: row wrap;
+    
+}
+
+/* flex-flow: ; resive dos valores */
+/* flex-wrap: wrap,wrap-reverse; envuelves el contenido */
+/* flex-direction: row ,row-reverse, column, column-reverse; */
