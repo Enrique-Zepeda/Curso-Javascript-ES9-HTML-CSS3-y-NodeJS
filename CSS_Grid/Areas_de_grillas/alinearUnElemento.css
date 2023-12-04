@@ -1,0 +1,27 @@
+body{
+    background-color: #eee;
+}
+
+.grid{
+    display: grid;
+    grid-template-areas:"header header" 
+                        "content sidebar"
+                        "footer footer";
+    grid-template-rows: 150px 1fr 100px;
+    grid-template-columns: 1fr 200px;
+    grid-auto-rows: 140px;
+    grid-auto-flow: row;
+}
+
+.red{
+    background-color: red;
+}
+
+
+/* Para alinear solo un elemento */
+/* justify-self: center,start,end,stretch,es de forma horizontal */
+/* align-self: center,start,end,stretch,es de forma vertical */
+.item-1{
+    justify-self: center;
+    align-self: center;
+}
