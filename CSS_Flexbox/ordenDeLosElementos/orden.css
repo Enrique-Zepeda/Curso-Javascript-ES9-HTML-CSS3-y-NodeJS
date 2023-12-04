@@ -1,0 +1,30 @@
+body{
+    background-color: #eee;
+    width: 200px;
+    margin: 0px;
+}
+
+.flex{
+    display: flex;
+    flex-flow: row wrap;
+    height: 200px;
+    
+    
+}
+
+/* todos los hijos de un contenedor de flex van a tener la propiedad de orde y su valor inicial siempre va a ser de 0*/
+
+.primero{
+    order: 1;
+    background-color: aqua;
+}
+
+.segundo{
+    order: -1;
+    background-color: rebeccapurple;
+}
+
+.tercero{
+    order: 2;
+    background-color: red;
+}
