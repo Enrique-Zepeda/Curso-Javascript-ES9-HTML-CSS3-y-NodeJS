@@ -25,5 +25,16 @@ window.onload = () => {
         const todosTemplate = todos.map(t => '<li>' + t + '</li>');
         // con la funcion join() vamos a poder todos los elemntos de un arrreglo y juntarlos
         todoList.innerHTML = todosTemplate.join('')
+        // querySelectorAll funciona como getElementById solo que ahora tendremos que pone # para agarrar todos los elementos
+        const elementos = document.querySelectorAll('#todo-list li')
+        elementos.forEach((elemento, i) => {
+            elemento.addEventListener('click', () => {
+                // eliminar en html
+                elemento.parentNode.removeChild(elemento)
+                todos.splice(i,1)
+                console.log(todos,i)
+                // console.log(elemento.parentNode, i)
+            })
+        })
     }
 }
