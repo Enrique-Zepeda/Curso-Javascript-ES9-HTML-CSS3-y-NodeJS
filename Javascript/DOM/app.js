@@ -1,4 +1,4 @@
-const todos = [];
+const todos = JSON.parse(localStorage.getItem('todos')) || [];
 
 const render = () => {
     const todoList = document.getElementById('todo-list');
@@ -24,6 +24,7 @@ const render = () => {
                 // eliminar en html
                 elemento.parentNode.removeChild(elemento)
                 todos.splice(i,1)
+                actualizaTODOS(todos)
                 render()
                 console.log(todos,i)
                 // console.log(elemento.parentNode, i)
@@ -31,7 +32,13 @@ const render = () => {
         })
 }
 
+const actualizaTODOS = (todos) =>{
+    const todoStrings = JSON.stringify(todos)
+    localStorage.setItem('todos', todoStrings)
+}
+
 window.onload = () => {
+    render()
     const form = document.getElementById('todo-form');
     form.onsubmit = (e) => {
         e.preventDefault();
@@ -39,6 +46,7 @@ window.onload = () => {
         const todotext = todo.value;
         todo.value = '';
         todos.push(todotext);
+        actualizaTODOS(todos)
         console.log(todotext);
         render()
     }
