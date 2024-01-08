@@ -1,15 +1,7 @@
 const todos = [];
 
-window.onload = () => {
-    const form = document.getElementById('todo-form');
-    form.onsubmit = (e) => {
-        e.preventDefault();
-        const todo = document.getElementById('todo');
-        const todotext = todo.value;
-        todo.value = '';
-        todos.push(todotext);
-        console.log(todotext);
-        const todoList = document.getElementById('todo-list');
+const render = () => {
+    const todoList = document.getElementById('todo-list');
         // mostrar el arreglo con for
         // todoList.innerHTML = '';
         // for(let i = 0 ; i < todos.length; i++){
@@ -32,9 +24,22 @@ window.onload = () => {
                 // eliminar en html
                 elemento.parentNode.removeChild(elemento)
                 todos.splice(i,1)
+                render()
                 console.log(todos,i)
                 // console.log(elemento.parentNode, i)
             })
         })
+}
+
+window.onload = () => {
+    const form = document.getElementById('todo-form');
+    form.onsubmit = (e) => {
+        e.preventDefault();
+        const todo = document.getElementById('todo');
+        const todotext = todo.value;
+        todo.value = '';
+        todos.push(todotext);
+        console.log(todotext);
+        render()
     }
 }
