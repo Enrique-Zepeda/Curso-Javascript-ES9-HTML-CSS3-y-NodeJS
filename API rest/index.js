@@ -28,6 +28,12 @@ const buscarUno = async () => {
     console.log(user)
 }
 
+const actualizar = async () => {
+    const user = await User.findOne({username: 'chanchito feliz'})
+    console.log(user)
+    user.edad = 30
+    await user.save()
+}
 
 const eliminar = async () => {
     const user = await User.deleteOne({username: 'chanchito triste'})
@@ -35,7 +41,8 @@ const eliminar = async () => {
 }
 
 // crear()
-buscarUno()
+// buscarUno()
 // buscarTodo()
 // buscar()
+actualizar()
 // eliminar()
