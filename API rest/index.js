@@ -37,12 +37,16 @@ const actualizar = async () => {
 
 const eliminar = async () => {
     const user = await User.deleteOne({username: 'chanchito triste'})
-    console.log(user)
+    // const user = await User.findOne({username: 'chanchito triste'})
+    // console.log(user)
+    // if (user){
+    //     await user.remove()
+    // }
 }
 
 // crear()
 // buscarUno()
 // buscarTodo()
 // buscar()
-actualizar()
+// actualizar()
 // eliminar()
