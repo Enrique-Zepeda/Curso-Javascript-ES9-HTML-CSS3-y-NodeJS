@@ -18,5 +18,11 @@ const buscarTodo = async () => {
     console.log(users)
 }
 
+const buscar = async () => {
+    const user = await User.find({username: 'chanchito feliz'})
+    console.log(user)
+}
+
 // crear()
-buscarTodo()
+// buscarTodo()
+buscar()
