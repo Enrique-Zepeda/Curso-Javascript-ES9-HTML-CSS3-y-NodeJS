@@ -8,9 +8,15 @@ const User = mongoose.model('User', {
 })
 
 const crear = async () => {
-    const user = new User({username: 'chanchito feliz', edad: 15})
+    const user = new User({username: 'chanchito triste', edad: 25})
     const savedUser = await user.save()
     console.log(savedUser)
 }
 
-crear()
+const buscarTodo = async () => {
+    const users = await User.find()
+    console.log(users)
+}
+
+// crear()
+buscarTodo()
