@@ -23,6 +23,12 @@ const buscar = async () => {
     console.log(user)
 }
 
+const eliminar = async () => {
+    const user = await User.deleteMany({username: 'chanchito feliz'})
+    console.log(user)
+}
+
 // crear()
 // buscarTodo()
-buscar()
+// buscar()
+eliminar()
