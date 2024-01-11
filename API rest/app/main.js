@@ -29,6 +29,17 @@ const getUsers = async () => {
     `
     const userList = document.getElementById('user-list')
     userList.innerHTML = users.map(user => template(user)).join('')
+    users.forEach(user => {
+        const userNode = document.querySelector(`[data-id="${user._id}"]`)
+        userNode.onclick = async e => {
+            console.log(`Deleting user with ID ${user._id}`);
+            await fetch(`/users/${user._id}`,{
+                method: 'DELETE',
+            })
+            userNode.parentNode.remove()
+            alert('Eliminado con exito')
+        }
+    })
 }
 
 const addformListener = () => {
