@@ -6,4 +6,4 @@ const User = mongoose.model('User',{
     salt: {type: String, require: true},
 })
 
-model.exports = User
+module.exports = User
