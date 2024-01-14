@@ -12,8 +12,9 @@ const app = express()
 
 app.use(express.json())
 
-const validateJwt = expressJwt({ secret: 'secreto', algorithms: ['HS256']})
-const singToken = _id => jwt.sign( { _id }, 'secreto')
+console.log(process.env.SECRET)
+const validateJwt = expressJwt({ secret: process.env.SECRET, algorithms: ['HS256']})
+const singToken = _id => jwt.sign( { _id }, process.env.SECRET)
 
 app.post('/register', async (req, res) => {
     const { body } = req
@@ -87,8 +88,8 @@ const findAndAssignUser = async (req, res, next) => {
 
 const isAuthenticated = express.Router().use(validateJwt, findAndAssignUser)
 app.get('/lele',isAuthenticated, (req, res) => {
-    throw new Error('nuevo error')
-    // res.send(req.auth)
+    // throw new Error('nuevo error')
+    res.send(req.auth)
 })
 
 app.use((err, req, res, next) => {
