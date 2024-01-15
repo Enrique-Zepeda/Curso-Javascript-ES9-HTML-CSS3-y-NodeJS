@@ -2,7 +2,7 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { expressjwt: expressJwt } = require('express-jwt')
-const User = require('/user.model');
+const User = require('./user.model');
 const { model } = require('mongoose');
 
 const validateJwt = expressJwt({ secret: process.env.secret, algorithms: ['HS256']})
@@ -13,7 +13,7 @@ findAndAssignUser = async (req, res, next) => {
     try{
         const user = await User.findById(req.user._id)
         if(!user){
-            return res.estatus(401).end()
+            return res.status(401).end()
         }
         req.user = user
         next()
@@ -57,8 +57,8 @@ const Auth = {
                 const signed = singToken(user._id)
                 res.send(signed)
             }
-        }catch(err){
-            res.status(500).send(err.message)
+        }catch(e){
+            res.status(500).send(e.message)
         }
     },
 }
