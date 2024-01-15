@@ -14,10 +14,14 @@ const Animal = {
 		res.status(204).send('actualizando chanchito')
 	},
 	destroy: async (req, res) => {
-		const { id } = req.params
-		const animal = await Animals.findOne({ _id: id })
-    await animal.remove()
-		res.status(204).send('eliminando chanchito :(')
+		const { id } = req.params;
+		try {
+			await Animals.findByIdAndDelete(id);
+			res.status(204).send('eliminando chanchito :(');
+		} catch (error) {
+			console.error(error);
+			res.status(500).send('Error eliminando el chanchito');
+		}
 	}
 }
 

@@ -11,11 +11,11 @@ const singToken = _id => jwt.sign({ _id }, process.env.secret)
 
 findAndAssignUser = async (req, res, next) => {
     try{
-        const user = await User.findById(req.user._id)
+        const user = await User.findById(req.auth._id)
         if(!user){
             return res.status(401).end()
         }
-        req.user = user
+        req.auth = user
         next()
     }catch(e){
         next(e)
